@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int array[100];
+    int maxNum,minNum,length;
+    int missingNum;
+    int i,a,b,c,*ptr[100];
+    
+    printf("Input the length\n");
+    scanf("%d",&length);
+    
+    for(i=0;i<length;i++){
+        printf("array = ");
+        scanf("%d",&array[i]);
+    }
+    
+    for(c=0;c<length;c++){
+        ptr[c]=&array[c];
+        
+    }
+    
+    maxNum=*ptr[0];
+    
+    for(a=1;a<length;a++){
+       if(maxNum<*ptr[a]){
+           maxNum=*ptr[a];
+       }
+    }
+    minNum=maxNum;
+    for(b=0;b<length;b++){
+        if(minNum>*ptr[b]){
+           minNum=*ptr[b];
+       }
+       
+    }
+    
+    printf("%d\n",maxNum);
+    printf("%d\n",minNum);
+    
+    missingNum=maxNum - minNum + 1 - length;
+    
+    printf("%d",missingNum);
+    
+    return 0;
+    
+}
