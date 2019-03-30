@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(){
+    char s[5][50]= {"aba", "aa", "ad", "vcd", "aba"};
+    char r[100];
+    int count,length,max;
+    int a,b,c,d;
+    
+    
+    for(a=0;a<5;a++){
+        count=0;
+        while(s[a][count] != '\0'){
+            count++;
+        }
+        //count--;
+        r[a]=count;
+    }
+    
+    max=r[0];
+    for(b=0;b<5;b++){
+        if(max<=r[b]){
+            max=r[b];
+            printf("%s\n",s[b]);
+        }
+        
+    }
+   
+    return 0;
