@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(){
+    int a,b,c,d;
+    int total;
+    
+    int array[4][4] = { 0, 1, 2, 3,
+                       1, 5, 0, 6,
+                       4, 3, 2, 1,
+                       5, 9, 4, 6 };
+    
+     for(c=0;c<4;c++){
+        for(d=0;d<4;d++){
+            if(array[c][d]==0){
+                for(int n=c;n<4;n++){
+                    array[n][d]=0;
+                }
+            }
+        }
+     }
+     
+     for(a=0;a<4;a++){
+        for(b=0;b<4;b++){
+            if(b==3) printf("%d\n",array[a][b]);
+            else printf("%d\t",array[a][b]);
+            total += array[a][b];
+        }
+    }
+     printf("total= %d",total);
+    return 0;
+}
